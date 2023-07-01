@@ -60,6 +60,7 @@ return {
           documentation = cmp.config.window.bordered(border_opts),
         },
         mapping = {
+          ["<CR>"] = cmp.mapping.confirm { select = false },
           ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
