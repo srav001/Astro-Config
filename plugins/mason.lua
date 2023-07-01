@@ -1,10 +1,3 @@
--- Eslint auto fix command
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.tsx", "*.ts", "*.jsx", "*.js", "*.vue", "*.svelte", "*.astro" },
-  command = "silent! EslintFixAll",
-  group = vim.api.nvim_create_augroup("MyAutocmdsForEslintAutoFix", {}),
-})
-
 -- customize mason plugins
 return {
   -- use mason-lspconfig to configure LSP installations
