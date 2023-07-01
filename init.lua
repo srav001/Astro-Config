@@ -69,15 +69,76 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    local lspconfig = require("lspconfig")
     -- use takeover mode if volar exists instead of tsserver and volar
-    if require("lspconfig").volar then
-      require("lspconfig").volar.setup {
+    if lspconfig.volar and lspconfig.volar.setup then
+      lspconfig.volar.setup {
         filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+        settings = {
+          typescript = {
+            inlayHints = {
+              enumMemberValues = {
+                enabled = true
+              },
+              functionLikeReturnTypes = {
+                enabled = true
+              },
+              includeInlayFunctionParameterTypeHints = {
+                enabled = true
+              },
+              parameterNames = {
+                enabled = true,
+                suppressWhenArgumentMatchesName = true
+              },
+              parameterTypes = {
+                enabled = true
+              },
+              propertyDeclarationTypes = {
+                enabled = true
+              },
+              includeInlayFunctionLikeReturnTypeHints = {
+                enabled = true
+              },
+              variableTypes = {
+                enabled = true
+              },
+            }
+          },
+          javascript = {
+            inlayHints = {
+              enumMemberValues = {
+                enabled = true
+              },
+              functionLikeReturnTypes = {
+                enabled = true
+              },
+              includeInlayFunctionParameterTypeHints = {
+                enabled = true
+              },
+              parameterNames = {
+                enabled = true,
+                suppressWhenArgumentMatchesName = true
+              },
+              parameterTypes = {
+                enabled = true
+              },
+              propertyDeclarationTypes = {
+                enabled = true
+              },
+              includeInlayFunctionLikeReturnTypeHints = {
+                enabled = true
+              },
+              variableTypes = {
+                enabled = true
+              },
+            }
+          },
+        }
       }
     end
 
     -- Eslint auto fix command
-    if require("lspconfig").eslint then
+    if lspconfig.eslint then
       vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = { "*.tsx", "*.ts", "*.jsx", "*.js", "*.vue", "*.svelte", "*.astro" },
         command = "silent! EslintFixAll",
