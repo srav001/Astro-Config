@@ -9,7 +9,9 @@ return {
       "javascript",
       "typescript",
       -- "vue",
+      -- "astro",
       -- "svelte",
+      -- "markdown",
     })
   end,
 }

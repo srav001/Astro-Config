@@ -1,3 +1,10 @@
+-- Eslint auto fix command
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.tsx", "*.ts", "*.jsx", "*.js", "*.vue", "*.svelte", "*.astro" },
+  command = "silent! EslintFixAll",
+  group = vim.api.nvim_create_augroup("MyAutocmdsForEslintAutoFix", {}),
+})
+
 -- customize mason plugins
 return {
   -- use mason-lspconfig to configure LSP installations
@@ -8,6 +15,15 @@ return {
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
         "lua_ls",
+        -- "tsserver",
+        -- "eslint",
+        -- "volar",
+        -- "html",
+        -- "cssls",
+        -- "tailwindcss",
+        -- "astro",
+        -- "svelte",
+        -- "unocss",
       })
     end,
   },

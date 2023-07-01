@@ -1,4 +1,17 @@
--- set vim options here (vim.<first_key>.<second_key> = value)
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   callback = function()
+--     -- Only load the session if nvim was started with no args
+--     if vim.fn.argc(-1) == 0 then
+--       -- Save these to a different directory, so our manual sessions don't get polluted
+--       resession.load(vim.fn.getcwd(), { dir = "dirsession", silence_errors = true })
+--     end
+--   end,
+-- })
+-- vim.api.nvim_create_autocmd("VimLeavePre", {
+--   callback = function() resession.save(vim.fn.getcwd(), { dir = "dirsession", notify = false }) end,
+-- })
+--
+-- -- set vim options here (vim.<first_key>.<second_key> = value)
 return {
   opt = {
     -- set to true or false etc.
@@ -16,7 +29,7 @@ return {
     diagnostics_mode = 3, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
-    resession_enabled = false, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
+    resession_enabled = true, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
   },
 }
 -- If you need more control, you can use the function()...end notation
