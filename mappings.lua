@@ -1,8 +1,5 @@
 -- Mapping data with "desc" stored directly by vim.keymap.set().
---
--- Please use this mappings table to set keyboard mapping since this is the
--- lower level configuration and more robust one. (which-key will
--- automatically pick-up stored data by this setting.)
+
 return {
   -- first key is the mode
   n = {
@@ -23,7 +20,24 @@ return {
     -- quick save
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
     [";"] = { ":", desc = "enter command mode" },
+
+    -- Move through buffers with tab and Stab
+    ["<tab>"] = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    ["<S-tab>"] = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
   },
+
+  i = {
+    -- go to  beginning and end
+    ["<C-b>"] = { "<ESC>^i", desc = "Beginning of line" },
+    ["<C-e>"] = { "<End>", desc = "End of line" },
+  },
+
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
