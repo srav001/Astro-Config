@@ -70,10 +70,10 @@ return {
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
     local lspconfig = require("lspconfig")
-    -- use takeover mode if volar exists instead of tsserver and volar
     if lspconfig.volar and lspconfig.volar.setup then
       lspconfig.volar.setup {
-        filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+        -- use takeover mode if volar exists (instead of tsserver + volar). Offers better performance but goToDef across file doesn't work
+        -- filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
         settings = {
           typescript = {
             inlayHints = {
@@ -135,6 +135,37 @@ return {
           },
         }
       }
+    end
+
+    if lspconfig.tsserver and lspconfig.tsserver.setup then
+      lspconfig.tsserver.setup({
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = 'all',
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            }
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayParameterNameHints = 'all',
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            }
+          }
+        }
+      })
     end
 
     -- Eslint auto fix command
