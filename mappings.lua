@@ -64,7 +64,6 @@ return {
     --   desc = "LSP definition type",
     -- },
     --
-
     
     ["<leader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", desc = "Find in current buffer" },
   },
