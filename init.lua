@@ -69,104 +69,7 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
-    local lspconfig = require("lspconfig")
-    if lspconfig.volar and lspconfig.volar.setup then
-      lspconfig.volar.setup {
-        -- use takeover mode if volar exists (instead of tsserver + volar). Offers better performance but goToDef across file doesn't work
-        -- filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-        settings = {
-          typescript = {
-            inlayHints = {
-              enumMemberValues = {
-                enabled = true
-              },
-              functionLikeReturnTypes = {
-                enabled = true
-              },
-              includeInlayFunctionParameterTypeHints = {
-                enabled = true
-              },
-              parameterNames = {
-                enabled = true,
-                suppressWhenArgumentMatchesName = true
-              },
-              parameterTypes = {
-                enabled = true
-              },
-              propertyDeclarationTypes = {
-                enabled = true
-              },
-              includeInlayFunctionLikeReturnTypeHints = {
-                enabled = true
-              },
-              variableTypes = {
-                enabled = true
-              },
-            }
-          },
-          javascript = {
-            inlayHints = {
-              enumMemberValues = {
-                enabled = true
-              },
-              functionLikeReturnTypes = {
-                enabled = true
-              },
-              includeInlayFunctionParameterTypeHints = {
-                enabled = true
-              },
-              parameterNames = {
-                enabled = true,
-                suppressWhenArgumentMatchesName = true
-              },
-              parameterTypes = {
-                enabled = true
-              },
-              propertyDeclarationTypes = {
-                enabled = true
-              },
-              includeInlayFunctionLikeReturnTypeHints = {
-                enabled = true
-              },
-              variableTypes = {
-                enabled = true
-              },
-            }
-          },
-        }
-      }
-    end
-
-    if lspconfig.tsserver and lspconfig.tsserver.setup then
-      lspconfig.tsserver.setup({
-        settings = {
-          typescript = {
-            inlayHints = {
-              includeInlayParameterNameHints = 'all',
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
-            }
-          },
-          javascript = {
-            inlayHints = {
-              includeInlayParameterNameHints = 'all',
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
-            }
-          }
-        }
-      })
-    end
+    local lspconfig = require "lspconfig"
 
     -- Eslint auto fix command
     if lspconfig.eslint then
@@ -176,5 +79,103 @@ return {
         group = vim.api.nvim_create_augroup("MyAutocmdsForEslintAutoFix", {}),
       })
     end
+
+    -- if lspconfig.volar and lspconfig.volar.setup then
+    --   lspconfig.volar.setup {
+    --     -- use takeover mode if volar exists (instead of tsserver + volar). Offers better performance but goToDef across file doesn't work
+    --     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+    --     settings = {
+    --       typescript = {
+    --         inlayHints = {
+    --           enumMemberValues = {
+    --             enabled = true,
+    --           },
+    --           functionLikeReturnTypes = {
+    --             enabled = true,
+    --           },
+    --           includeInlayFunctionParameterTypeHints = {
+    --             enabled = true,
+    --           },
+    --           parameterNames = {
+    --             enabled = true,
+    --             suppressWhenArgumentMatchesName = true,
+    --           },
+    --           parameterTypes = {
+    --             enabled = true,
+    --           },
+    --           propertyDeclarationTypes = {
+    --             enabled = true,
+    --           },
+    --           includeInlayFunctionLikeReturnTypeHints = {
+    --             enabled = true,
+    --           },
+    --           variableTypes = {
+    --             enabled = true,
+    --           },
+    --         },
+    --       },
+    --       javascript = {
+    --         inlayHints = {
+    --           enumMemberValues = {
+    --             enabled = true,
+    --           },
+    --           functionLikeReturnTypes = {
+    --             enabled = true,
+    --           },
+    --           includeInlayFunctionParameterTypeHints = {
+    --             enabled = true,
+    --           },
+    --           parameterNames = {
+    --             enabled = true,
+    --             suppressWhenArgumentMatchesName = true,
+    --           },
+    --           parameterTypes = {
+    --             enabled = true,
+    --           },
+    --           propertyDeclarationTypes = {
+    --             enabled = true,
+    --           },
+    --           includeInlayFunctionLikeReturnTypeHints = {
+    --             enabled = true,
+    --           },
+    --           variableTypes = {
+    --             enabled = true,
+    --           },
+    --         },
+    --       },
+    --     },
+    --   }
+    -- end
+
+    -- if lspconfig.tsserver and lspconfig.tsserver.setup then
+    --   lspconfig.tsserver.setup({
+    --     settings = {
+    --       typescript = {
+    --         inlayHints = {
+    --           includeInlayParameterNameHints = 'all',
+    --           includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+    --           includeInlayFunctionParameterTypeHints = true,
+    --           includeInlayVariableTypeHints = true,
+    --           includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+    --           includeInlayPropertyDeclarationTypeHints = true,
+    --           includeInlayFunctionLikeReturnTypeHints = true,
+    --           includeInlayEnumMemberValueHints = true,
+    --         }
+    --       },
+    --       javascript = {
+    --         inlayHints = {
+    --           includeInlayParameterNameHints = 'all',
+    --           includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+    --           includeInlayFunctionParameterTypeHints = true,
+    --           includeInlayVariableTypeHints = true,
+    --           includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+    --           includeInlayPropertyDeclarationTypeHints = true,
+    --           includeInlayFunctionLikeReturnTypeHints = true,
+    --           includeInlayEnumMemberValueHints = true,
+    --         }
+    --       }
+    --     }
+    --   })
+    -- end
   end,
 }

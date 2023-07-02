@@ -30,6 +30,40 @@ return {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
+
+    -- NOTE TO SELF: Stop adding options that override sane defaults
+    -- Adding goToDef manually since using lsp-inlayhints require lsp config which resets these defaults for lsps
+    ["gD"] = {
+      function() vim.lsp.buf.declaration() end,
+      desc = "LSP declaration",
+    },
+
+    ["gd"] = {
+      function() vim.lsp.buf.definition() end,
+      desc = "LSP definition",
+    },
+
+    ["K"] = {
+      function() vim.lsp.buf.hover() end,
+      desc = "LSP hover",
+    },
+
+    ["gi"] = {
+      function() vim.lsp.buf.implementation() end,
+      desc = "LSP implementation",
+    },
+
+    ["gr"] = {
+      function() vim.lsp.buf.references() end,
+      desc = "LSP references",
+    },
+
+    --
+    -- ["<leader>D"] = {
+    --   function() vim.lsp.buf.type_definition() end,
+    --   desc = "LSP definition type",
+    -- },
+    --
   },
 
   i = {
