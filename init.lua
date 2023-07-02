@@ -82,7 +82,7 @@ return {
 
     -- if lspconfig.volar and lspconfig.volar.setup then
     --   lspconfig.volar.setup {
-    --     -- use takeover mode if volar exists (instead of tsserver + volar). Offers better performance but goToDef across file doesn't work
+    --     -- use takeover mode if volar exists (instead of tsserver + volar). Offers better performance
     --     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
     --     settings = {
     --       typescript = {
