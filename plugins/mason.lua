@@ -11,14 +11,14 @@ return {
         -- Inlay hints present in init.lua
         -- "tsserver",
 
-        -- "eslint",
+        "eslint",
 
         -- Inlay hints present in init.lua
-        -- "volar",
+        "volar",
 
         -- "html",
         -- "cssls",
-        -- "tailwindcss",
+        "tailwindcss",
         -- "astro",
         -- "svelte",
         -- "unocss",

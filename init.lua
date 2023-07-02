@@ -80,72 +80,72 @@ return {
       })
     end
 
-    -- if lspconfig.volar and lspconfig.volar.setup then
-    --   lspconfig.volar.setup {
-    --     -- use takeover mode if volar exists (instead of tsserver + volar). Offers better performance but goToDef across file doesn't work
-    --     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-    --     settings = {
-    --       typescript = {
-    --         inlayHints = {
-    --           enumMemberValues = {
-    --             enabled = true,
-    --           },
-    --           functionLikeReturnTypes = {
-    --             enabled = true,
-    --           },
-    --           includeInlayFunctionParameterTypeHints = {
-    --             enabled = true,
-    --           },
-    --           parameterNames = {
-    --             enabled = true,
-    --             suppressWhenArgumentMatchesName = true,
-    --           },
-    --           parameterTypes = {
-    --             enabled = true,
-    --           },
-    --           propertyDeclarationTypes = {
-    --             enabled = true,
-    --           },
-    --           includeInlayFunctionLikeReturnTypeHints = {
-    --             enabled = true,
-    --           },
-    --           variableTypes = {
-    --             enabled = true,
-    --           },
-    --         },
-    --       },
-    --       javascript = {
-    --         inlayHints = {
-    --           enumMemberValues = {
-    --             enabled = true,
-    --           },
-    --           functionLikeReturnTypes = {
-    --             enabled = true,
-    --           },
-    --           includeInlayFunctionParameterTypeHints = {
-    --             enabled = true,
-    --           },
-    --           parameterNames = {
-    --             enabled = true,
-    --             suppressWhenArgumentMatchesName = true,
-    --           },
-    --           parameterTypes = {
-    --             enabled = true,
-    --           },
-    --           propertyDeclarationTypes = {
-    --             enabled = true,
-    --           },
-    --           includeInlayFunctionLikeReturnTypeHints = {
-    --             enabled = true,
-    --           },
-    --           variableTypes = {
-    --             enabled = true,
-    --           },
-    --         },
-    --       },
-    --     },
-    --   }
-    -- end
+    if lspconfig.volar and lspconfig.volar.setup then
+      lspconfig.volar.setup {
+        -- use takeover mode if volar exists (instead of tsserver + volar). Offers better performance
+        filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+        settings = {
+          typescript = {
+            inlayHints = {
+              enumMemberValues = {
+                enabled = true,
+              },
+              functionLikeReturnTypes = {
+                enabled = true,
+              },
+              includeInlayFunctionParameterTypeHints = {
+                enabled = true,
+              },
+              parameterNames = {
+                enabled = true,
+                suppressWhenArgumentMatchesName = true,
+              },
+              parameterTypes = {
+                enabled = true,
+              },
+              propertyDeclarationTypes = {
+                enabled = true,
+              },
+              includeInlayFunctionLikeReturnTypeHints = {
+                enabled = true,
+              },
+              variableTypes = {
+                enabled = true,
+              },
+            },
+          },
+          javascript = {
+            inlayHints = {
+              enumMemberValues = {
+                enabled = true,
+              },
+              functionLikeReturnTypes = {
+                enabled = true,
+              },
+              includeInlayFunctionParameterTypeHints = {
+                enabled = true,
+              },
+              parameterNames = {
+                enabled = true,
+                suppressWhenArgumentMatchesName = true,
+              },
+              parameterTypes = {
+                enabled = true,
+              },
+              propertyDeclarationTypes = {
+                enabled = true,
+              },
+              includeInlayFunctionLikeReturnTypeHints = {
+                enabled = true,
+              },
+              variableTypes = {
+                enabled = true,
+              },
+            },
+          },
+        },
+      }
+    end
 
     -- if lspconfig.tsserver and lspconfig.tsserver.setup then
     --   lspconfig.tsserver.setup({
