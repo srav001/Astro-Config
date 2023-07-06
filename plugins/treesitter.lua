@@ -14,7 +14,7 @@ return {
       "scss",
       "javascript",
       "typescript",
-      -- "vue",
+      "vue",
       -- "astro",
       -- "svelte",
       -- "markdown",
