@@ -30,7 +30,7 @@ git clone https://github.com/srav001/Astro-Config.git ~/.config/nvim/lua/user
 
 #### Or the short hand
 ```
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim && git clone https://github.com/srav001/Astro-Config.git ~/.config/nvim/lua/user && ~/.config/nvim/lua/user && vi
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim && git clone https://github.com/srav001/Astro-Config.git ~/.config/nvim/lua/user && cd ~/.config/nvim/lua/user && vi
 ```
 
 ## To remove nvim (Mac OS & Linux)
