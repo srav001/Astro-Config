@@ -3,6 +3,7 @@
 return {
   -- first key is the mode
   n = {
+    [";"] = { ":", desc = "enter command mode" },
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
@@ -19,7 +20,8 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
-    [";"] = { ":", desc = "enter command mode" },
+    [":W"] = { ":w", desc = "Save File" },
+    [";W"] = { ":w", desc = "Save File" },
 
     -- Move through buffers with tab and Stab
     ["<tab>"] = {
