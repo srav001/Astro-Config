@@ -1,5 +1,4 @@
 -- Auto load last session
-
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     -- Only load the session if nvim was started with no args
@@ -15,7 +14,7 @@ return {
     "echasnovski/mini.move",
     version = "*",
     config = function() require("mini.move").setup() end,
-    event = "User AstroFile",
+    event = "VeryLazy",
   },
   {
     "mg979/vim-visual-multi",
@@ -45,7 +44,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-    event = "User AstroFile",
+    lazy = true,
     opts = {
       title = 'Rename',
       padding = {
@@ -63,5 +62,17 @@ return {
       with_popup = true,
       handler = nil,
     }
+  },
+  {
+    "folke/trouble.nvim",
+    cmd = {"Trouble", "TroubleToggle"},
+    lazy = true,
+    config = true,
+  },
+  {
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+    lazy = true,
+    config = true,
   }
 }

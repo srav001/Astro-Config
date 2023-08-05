@@ -39,8 +39,6 @@ return {
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
-        -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
-        -- "lua_ls",
         "volar",
       },
       timeout_ms = 1000, -- default format timeout
@@ -69,6 +67,9 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    vim.wo.linebreak = true
+    vim.wo.list = false
+
     local lspconfig = require "lspconfig"
 
     -- Eslint auto fix command
