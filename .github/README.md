@@ -16,21 +16,31 @@ brew install jesseduffield/lazygit/lazygit
 brew install ripgrep
 ```
 
-#### Clone AstroNvim
+### Clone AstroNvim
 
 ```shell
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+git clone https://github.com/srav001/AstroNvim.git ~/.config/nvim
 ```
 
-#### Clone the repository
+#### Sync with AstroNvim
+```shell
+git remote add upstream https://github.com/AstroNvim/AstroNvim.git && git fetch upstream
+```
+
+### Clone the Config repository
 
 ```shell
 git clone https://github.com/srav001/Astro-Config.git ~/.config/nvim/lua/user
 ```
 
-#### Or the short hand
+#### Or the short hand (using SSH)
 ```
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim && git clone https://github.com/srav001/Astro-Config.git ~/.config/nvim/lua/user && cd ~/.config/nvim/lua/user && vi
+cd ~ && \
+git clone git@github.com:srav001/AstroNvim.git ~/.config/nvim && \
+git clone git@github.com:srav001/Astro-Config.git ~/.config/nvim/lua/user && \
+cd ~/.config/nvim && git remote add upstream https://github.com/AstroNvim/AstroNvim.git && git fetch upstream && \
+cd ~/.config/nvim/lua/user && \
+nvim
 ```
 
 ## To remove nvim (Mac OS & Linux)
