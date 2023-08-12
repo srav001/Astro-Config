@@ -16,8 +16,18 @@ brew install jesseduffield/lazygit/lazygit
 brew install ripgrep
 ```
 
-### Clone AstroNvim
+#### MonoNord Font
+```sh
+brew install --cask font-jetbrains-mono-nerd-font
+```
 
+#### All at once 
+
+```sh
+brew install ripgrep jesseduffield/lazygit/lazygit && brew install --cask font-jetbrains-mono-nerd-font
+```
+
+### Clone AstroNvim
 ```shell
 git clone https://github.com/srav001/AstroNvim.git ~/.config/nvim
 ```
@@ -28,12 +38,12 @@ git remote add upstream https://github.com/AstroNvim/AstroNvim.git && git fetch 
 ```
 
 ### Clone the Config repository
-
 ```shell
 git clone https://github.com/srav001/Astro-Config.git ~/.config/nvim/lua/user
 ```
 
 #### Or the short hand (using SSH)
+
 ```
 cd ~ && \
 git clone git@github.com:srav001/AstroNvim.git ~/.config/nvim && \
