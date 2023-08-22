@@ -40,6 +40,7 @@ return {
       },
       disabled = { -- disable formatting capabilities for the listed language servers
         "volar",
+        "tsserver",
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -81,102 +82,102 @@ return {
       })
     end
 
-    if lspconfig.volar and lspconfig.volar.setup then
-      lspconfig.volar.setup {
-        -- use takeover mode if volar exists (instead of tsserver + volar). Offers better performance
-        filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-        settings = {
-          typescript = {
-            inlayHints = {
-              enumMemberValues = {
-                enabled = true,
-              },
-              functionLikeReturnTypes = {
-                enabled = true,
-              },
-              includeInlayFunctionParameterTypeHints = {
-                enabled = true,
-              },
-              parameterNames = {
-                enabled = true,
-                suppressWhenArgumentMatchesName = true,
-              },
-              parameterTypes = {
-                enabled = true,
-              },
-              propertyDeclarationTypes = {
-                enabled = true,
-              },
-              includeInlayFunctionLikeReturnTypeHints = {
-                enabled = true,
-              },
-              variableTypes = {
-                enabled = true,
-              },
-            },
-          },
-          javascript = {
-            inlayHints = {
-              enumMemberValues = {
-                enabled = true,
-              },
-              functionLikeReturnTypes = {
-                enabled = true,
-              },
-              includeInlayFunctionParameterTypeHints = {
-                enabled = true,
-              },
-              parameterNames = {
-                enabled = true,
-                suppressWhenArgumentMatchesName = true,
-              },
-              parameterTypes = {
-                enabled = true,
-              },
-              propertyDeclarationTypes = {
-                enabled = true,
-              },
-              includeInlayFunctionLikeReturnTypeHints = {
-                enabled = true,
-              },
-              variableTypes = {
-                enabled = true,
-              },
-            },
-          },
-        },
-      }
-    end
-
-    -- if lspconfig.tsserver and lspconfig.tsserver.setup then
-    --   lspconfig.tsserver.setup({
+    -- if lspconfig.volar and lspconfig.volar.setup then
+    --   lspconfig.volar.setup {
+    --     -- use takeover mode if volar exists (instead of tsserver + volar). Offers better performance
+    --     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
     --     settings = {
     --       typescript = {
     --         inlayHints = {
-    --           includeInlayParameterNameHints = 'all',
-    --           includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-    --           includeInlayFunctionParameterTypeHints = true,
-    --           includeInlayVariableTypeHints = true,
-    --           includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-    --           includeInlayPropertyDeclarationTypeHints = true,
-    --           includeInlayFunctionLikeReturnTypeHints = true,
-    --           includeInlayEnumMemberValueHints = true,
-    --         }
+    --           enumMemberValues = {
+    --             enabled = true,
+    --           },
+    --           functionLikeReturnTypes = {
+    --             enabled = true,
+    --           },
+    --           includeInlayFunctionParameterTypeHints = {
+    --             enabled = true,
+    --           },
+    --           parameterNames = {
+    --             enabled = true,
+    --             suppressWhenArgumentMatchesName = true,
+    --           },
+    --           parameterTypes = {
+    --             enabled = true,
+    --           },
+    --           propertyDeclarationTypes = {
+    --             enabled = true,
+    --           },
+    --           includeInlayFunctionLikeReturnTypeHints = {
+    --             enabled = true,
+    --           },
+    --           variableTypes = {
+    --             enabled = true,
+    --           },
+    --         },
     --       },
     --       javascript = {
     --         inlayHints = {
-    --           includeInlayParameterNameHints = 'all',
-    --           includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-    --           includeInlayFunctionParameterTypeHints = true,
-    --           includeInlayVariableTypeHints = true,
-    --           includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-    --           includeInlayPropertyDeclarationTypeHints = true,
-    --           includeInlayFunctionLikeReturnTypeHints = true,
-    --           includeInlayEnumMemberValueHints = true,
-    --         }
-    --       }
-    --     }
-    --   })
+    --           enumMemberValues = {
+    --             enabled = true,
+    --           },
+    --           functionLikeReturnTypes = {
+    --             enabled = true,
+    --           },
+    --           includeInlayFunctionParameterTypeHints = {
+    --             enabled = true,
+    --           },
+    --           parameterNames = {
+    --             enabled = true,
+    --             suppressWhenArgumentMatchesName = true,
+    --           },
+    --           parameterTypes = {
+    --             enabled = true,
+    --           },
+    --           propertyDeclarationTypes = {
+    --             enabled = true,
+    --           },
+    --           includeInlayFunctionLikeReturnTypeHints = {
+    --             enabled = true,
+    --           },
+    --           variableTypes = {
+    --             enabled = true,
+    --           },
+    --         },
+    --       },
+    --     },
+    --   }
     -- end
+
+    if lspconfig.tsserver and lspconfig.tsserver.setup then
+      lspconfig.tsserver.setup({
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = 'all',
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            }
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayParameterNameHints = 'all',
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            }
+          }
+        }
+      })
+    end
   end,
 }

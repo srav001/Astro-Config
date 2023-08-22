@@ -9,12 +9,12 @@ return {
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
         "lua_ls",
         -- Inlay hints present in init.lua
-        -- "tsserver",
+        "tsserver",
 
         "eslint",
 
         -- Inlay hints present in init.lua
-        "volar",
+        -- "volar",
 
         -- "html",
         -- "cssls",
