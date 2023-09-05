@@ -8,9 +8,9 @@ return {
       "scss",
       "javascript",
       "typescript",
-      "vue",
+      -- "vue",
       -- "astro",
-      -- "svelte",
+      "svelte",
       -- "markdown",
     }
   end,
