@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 return {
   -- Configure AstroNvim updates
   updater = {
@@ -40,6 +41,7 @@ return {
       },
       disabled = { -- disable formatting capabilities for the listed language servers
         "volar",
+        "svelte",
         "tsserver",
       },
       timeout_ms = 1000, -- default format timeout

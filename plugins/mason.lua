@@ -20,7 +20,7 @@ return {
         -- "cssls",
         "tailwindcss",
         -- "astro",
-        -- "svelte",
+        "svelte",
         -- "unocss",
       })
     end,
