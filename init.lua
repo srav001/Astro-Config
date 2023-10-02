@@ -3,7 +3,7 @@ return {
   -- Configure AstroNvim updates
   updater = {
     remote = "origin",     -- remote to use
-    channel = "stable",    -- "stable" or "nightly"
+    channel = "nightly",    -- "stable" or "nightly"
     version = "latest",    -- "latest",     
     branch = "nightly",    -- branch name (NIGHTLY ONLY)
     commit = nil,          -- commit hash (NIGHTLY ONLY)
@@ -44,7 +44,7 @@ return {
         "svelte",
         "tsserver",
       },
-      timeout_ms = 1200, -- default format timeout
+      timeout_ms = 1400, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
       --   return true
       -- end

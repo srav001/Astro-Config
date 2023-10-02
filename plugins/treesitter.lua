@@ -8,6 +8,7 @@ return {
       "scss",
       "javascript",
       "typescript",
+      "markdown",
       -- "vue",
       -- "astro",
       "svelte",
