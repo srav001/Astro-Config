@@ -1,17 +1,16 @@
----@diagnostic disable: missing-fields
 return {
   -- Configure AstroNvim updates
   updater = {
-    remote = "origin",     -- remote to use
-    channel = "nightly",    -- "stable" or "nightly"
-    version = "latest",    -- "latest",     
-    branch = "nightly",    -- branch name (NIGHTLY ONLY)
-    commit = nil,          -- commit hash (NIGHTLY ONLY)
-    pin_plugins = nil,     -- nil, true, false (nil will pin plugins on stable only)
-    skip_prompts = false,  -- skip prompts about breaking changes
+    remote = "origin", -- remote to use
+    channel = "nightly", -- "stable" or "nightly"
+    version = "latest", -- "latest",
+    branch = "nightly", -- branch name (NIGHTLY ONLY)
+    commit = nil, -- commit hash (NIGHTLY ONLY)
+    pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
+    skip_prompts = false, -- skip prompts about breaking changes
     show_changelog = true, -- show the changelog after performing an update
-    auto_quit = false,     -- automatically quit the current session after a successful update
-    remotes = {            -- easily add new remotes to track
+    auto_quit = false, -- automatically quit the current session after a successful update
+    remotes = { -- easily add new remotes to track
       --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
       --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
       --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
@@ -31,7 +30,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true,     -- enable or disable format on save globally
+        enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -49,9 +48,37 @@ return {
       --   return true
       -- end
     },
-    -- enable servers that you already have installed without mason
-    servers = {
-      -- "pyright"
+    config = {
+      tsserver = function(opts)
+        opts.settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+        }
+
+        return opts
+      end,
     },
   },
 
@@ -150,36 +177,5 @@ return {
     --     },
     --   }
     -- end
-
-    if lspconfig.tsserver and lspconfig.tsserver.setup then
-      lspconfig.tsserver.setup({
-        settings = {
-          typescript = {
-            inlayHints = {
-              includeInlayParameterNameHints = 'all',
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
-            }
-          },
-          javascript = {
-            inlayHints = {
-              includeInlayParameterNameHints = 'all',
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
-            }
-          }
-        }
-      })
-    end
   end,
 }
