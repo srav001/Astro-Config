@@ -47,103 +47,121 @@ return {
       -- end
     },
     config = {
-      tsserver = function(opts)
-        opts.settings = {
-          typescript = {
-            inlayHints = {
-              includeInlayParameterNameHints = "all",
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
-            },
-          },
-          javascript = {
-            inlayHints = {
-              includeInlayParameterNameHints = "all",
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
-            },
-          },
-        }
-
-        return opts
-      end,
-
-      -- if lspconfig.volar and lspconfig.volar.setup then
-      --   lspconfig.volar.setup {
-      --     -- use takeover mode if volar exists (instead of tsserver + volar). Offers better performance
-      --     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-      --     settings = {
-      --       typescript = {
-      --         inlayHints = {
-      --           enumMemberValues = {
+      -- svelte = function(opts)
+      --   opts.settings = {
+      --     svelte = {
+      --       plugin = {
+      --         html = {
+      --           completions = {
       --             enabled = true,
-      --           },
-      --           functionLikeReturnTypes = {
-      --             enabled = true,
-      --           },
-      --           includeInlayFunctionParameterTypeHints = {
-      --             enabled = true,
-      --           },
-      --           parameterNames = {
-      --             enabled = true,
-      --             suppressWhenArgumentMatchesName = true,
-      --           },
-      --           parameterTypes = {
-      --             enabled = true,
-      --           },
-      --           propertyDeclarationTypes = {
-      --             enabled = true,
-      --           },
-      --           includeInlayFunctionLikeReturnTypeHints = {
-      --             enabled = true,
-      --           },
-      --           variableTypes = {
-      --             enabled = true,
+      --             emmet = true,
       --           },
       --         },
-      --       },
-      --       javascript = {
-      --         inlayHints = {
-      --           enumMemberValues = {
-      --             enabled = true,
+      --         svelte = {
+      --           compilerWarnings = {
+      --             ["missing-declaration"] = "ignore",
       --           },
-      --           functionLikeReturnTypes = {
-      --             enabled = true,
-      --           },
-      --           includeInlayFunctionParameterTypeHints = {
-      --             enabled = true,
-      --           },
-      --           parameterNames = {
-      --             enabled = true,
-      --             suppressWhenArgumentMatchesName = true,
-      --           },
-      --           parameterTypes = {
-      --             enabled = true,
-      --           },
-      --           propertyDeclarationTypes = {
-      --             enabled = true,
-      --           },
-      --           includeInlayFunctionLikeReturnTypeHints = {
-      --             enabled = true,
-      --           },
-      --           variableTypes = {
-      --             enabled = true,
-      --     },
       --         },
       --       },
       --     },
       --   }
-      -- end
+      --   return opts
+      -- end,
+      -- tsserver = function(opts)
+      --   opts.settings = {
+      --     typescript = {
+      --       inlayHints = {
+      --         includeInlayParameterNameHints = "all",
+      --         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+      --         includeInlayFunctionParameterTypeHints = true,
+      --         includeInlayVariableTypeHints = true,
+      --         includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+      --         includeInlayPropertyDeclarationTypeHints = true,
+      --         includeInlayFunctionLikeReturnTypeHints = true,
+      --         includeInlayEnumMemberValueHints = true,
+      --       },
+      --     },
+      --     javascript = {
+      --       inlayHints = {
+      --         includeInlayParameterNameHints = "all",
+      --         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+      --         includeInlayFunctionParameterTypeHints = true,
+      --         includeInlayVariableTypeHints = true,
+      --         includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+      --         includeInlayPropertyDeclarationTypeHints = true,
+      --         includeInlayFunctionLikeReturnTypeHints = true,
+      --         includeInlayEnumMemberValueHints = true,
+      --       },
+      --     },
+      --   }
+      --
+      --   return opts
+      -- end,
+      -- volar = function(opts)
+      --   opts.filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
+      --   opts.settings = {
+      --     typescript = {
+      --       inlayHints = {
+      --         enumMemberValues = {
+      --           enabled = true,
+      --         },
+      --         functionLikeReturnTypes = {
+      --           enabled = true,
+      --         },
+      --         includeInlayFunctionParameterTypeHints = {
+      --           enabled = true,
+      --         },
+      --         parameterNames = {
+      --           enabled = true,
+      --           suppressWhenArgumentMatchesName = true,
+      --         },
+      --         parameterTypes = {
+      --           enabled = true,
+      --         },
+      --         propertyDeclarationTypes = {
+      --           enabled = true,
+      --         },
+      --         includeInlayFunctionLikeReturnTypeHints = {
+      --           enabled = true,
+      --         },
+      --         variableTypes = {
+      --           enabled = true,
+      --         },
+      --       },
+      --     },
+      --     javascript = {
+      --       inlayHints = {
+      --         enumMemberValues = {
+      --           enabled = true,
+      --         },
+      --         functionLikeReturnTypes = {
+      --           enabled = true,
+      --         },
+      --         includeInlayFunctionParameterTypeHints = {
+      --           enabled = true,
+      --         },
+      --         parameterNames = {
+      --           enabled = true,
+      --           suppressWhenArgumentMatchesName = true,
+      --         },
+      --         parameterTypes = {
+      --           enabled = true,
+      --         },
+      --         propertyDeclarationTypes = {
+      --           enabled = true,
+      --         },
+      --         includeInlayFunctionLikeReturnTypeHints = {
+      --           enabled = true,
+      --         },
+      --         variableTypes = {
+      --           enabled = true,
+      --         },
+      --       },
+      --     },
+      --   }
+      --
+      --   return opts
+      -- end,
     },
   },
 
