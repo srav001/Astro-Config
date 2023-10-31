@@ -6,6 +6,7 @@ return {
       "lua",
       "html",
       "scss",
+      "markdown",
       "javascript",
       "typescript",
       "markdown",
