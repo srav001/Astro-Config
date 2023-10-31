@@ -2,8 +2,8 @@ return {
   -- Configure AstroNvim updates
   updater = {
     remote = "origin", -- remote to use
-    channel = "nightly", -- "stable" or "nightly"
-    version = "latest", -- "latest",
+    channel = "stable", -- "stable" or "nightly"
+    version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
     branch = "nightly", -- branch name (NIGHTLY ONLY)
     commit = nil, -- commit hash (NIGHTLY ONLY)
     pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
@@ -49,6 +49,26 @@ return {
       -- end
     },
     config = {
+      svelte = function(opts)
+        opts.settings = {
+          svelte = {
+            plugin = {
+              -- html = {
+              --   completions = {
+              --     enabled = true,
+              --     emmet = true,
+              --   },
+              -- },
+              svelte = {
+                compilerWarnings = {
+                  ["missing-declaration"] = "ignore",
+                },
+              },
+            },
+          },
+        }
+        return opts
+      end,
       tsserver = function(opts)
         opts.settings = {
           typescript = {
@@ -79,6 +99,71 @@ return {
 
         return opts
       end,
+      -- volar = function(opts)
+      --   opts.filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
+      --   opts.settings = {
+      --     typescript = {
+      --       inlayHints = {
+      --         enumMemberValues = {
+      --           enabled = true,
+      --         },
+      --         functionLikeReturnTypes = {
+      --           enabled = true,
+      --         },
+      --         includeInlayFunctionParameterTypeHints = {
+      --           enabled = true,
+      --         },
+      --         parameterNames = {
+      --           enabled = true,
+      --           suppressWhenArgumentMatchesName = true,
+      --         },
+      --         parameterTypes = {
+      --           enabled = true,
+      --         },
+      --         propertyDeclarationTypes = {
+      --           enabled = true,
+      --         },
+      --         includeInlayFunctionLikeReturnTypeHints = {
+      --           enabled = true,
+      --         },
+      --         variableTypes = {
+      --           enabled = true,
+      --         },
+      --       },
+      --     },
+      --     javascript = {
+      --       inlayHints = {
+      --         enumMemberValues = {
+      --           enabled = true,
+      --         },
+      --         functionLikeReturnTypes = {
+      --           enabled = true,
+      --         },
+      --         includeInlayFunctionParameterTypeHints = {
+      --           enabled = true,
+      --         },
+      --         parameterNames = {
+      --           enabled = true,
+      --           suppressWhenArgumentMatchesName = true,
+      --         },
+      --         parameterTypes = {
+      --           enabled = true,
+      --         },
+      --         propertyDeclarationTypes = {
+      --           enabled = true,
+      --         },
+      --         includeInlayFunctionLikeReturnTypeHints = {
+      --           enabled = true,
+      --         },
+      --         variableTypes = {
+      --           enabled = true,
+      --         },
+      --       },
+      --     },
+      --   }
+      --
+      --   return opts
+      -- end,
     },
   },
 
@@ -110,72 +195,5 @@ return {
         group = vim.api.nvim_create_augroup("MyAutocmdsForEslintAutoFix", {}),
       })
     end
-
-    -- if lspconfig.volar and lspconfig.volar.setup then
-    --   lspconfig.volar.setup {
-    --     -- use takeover mode if volar exists (instead of tsserver + volar). Offers better performance
-    --     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-    --     settings = {
-    --       typescript = {
-    --         inlayHints = {
-    --           enumMemberValues = {
-    --             enabled = true,
-    --           },
-    --           functionLikeReturnTypes = {
-    --             enabled = true,
-    --           },
-    --           includeInlayFunctionParameterTypeHints = {
-    --             enabled = true,
-    --           },
-    --           parameterNames = {
-    --             enabled = true,
-    --             suppressWhenArgumentMatchesName = true,
-    --           },
-    --           parameterTypes = {
-    --             enabled = true,
-    --           },
-    --           propertyDeclarationTypes = {
-    --             enabled = true,
-    --           },
-    --           includeInlayFunctionLikeReturnTypeHints = {
-    --             enabled = true,
-    --           },
-    --           variableTypes = {
-    --             enabled = true,
-    --           },
-    --         },
-    --       },
-    --       javascript = {
-    --         inlayHints = {
-    --           enumMemberValues = {
-    --             enabled = true,
-    --           },
-    --           functionLikeReturnTypes = {
-    --             enabled = true,
-    --           },
-    --           includeInlayFunctionParameterTypeHints = {
-    --             enabled = true,
-    --           },
-    --           parameterNames = {
-    --             enabled = true,
-    --             suppressWhenArgumentMatchesName = true,
-    --           },
-    --           parameterTypes = {
-    --             enabled = true,
-    --           },
-    --           propertyDeclarationTypes = {
-    --             enabled = true,
-    --           },
-    --           includeInlayFunctionLikeReturnTypeHints = {
-    --             enabled = true,
-    --           },
-    --           variableTypes = {
-    --             enabled = true,
-    --           },
-    --         },
-    --       },
-    --     },
-    --   }
-    -- end
   end,
 }
