@@ -3,8 +3,8 @@ return {
   dependencies = {
     {
       "windwp/nvim-ts-autotag",
-      opts = {}
-    }
+      opts = {},
+    },
   },
   opts = function(_, opts)
     -- add more things to the ensure_installed table protecting against community packs modifying it
@@ -12,6 +12,7 @@ return {
       "lua",
       "html",
       "scss",
+      "markdown",
       "javascript",
       "typescript",
       -- "vue",
