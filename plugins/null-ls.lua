@@ -11,8 +11,20 @@ return {
       -- Set a formatter
       -- null_ls.builtins.formatting.stylua,
       require("null-ls").builtins.formatting.prettier.with {
-        filetypes = { "html", "markdown", "css", "scss", "vue", "svelte", "typescript", "javascript", "json", "astro",
-          "typescriptreact", "javascriptreact" },
+        filetypes = {
+          "html",
+          "markdown",
+          "css",
+          "scss",
+          "vue",
+          "svelte",
+          "typescript",
+          "javascript",
+          "json",
+          "astro",
+          "typescriptreact",
+          "javascriptreact",
+        },
       },
     }
     return config -- return final config table
