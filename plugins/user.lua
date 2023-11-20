@@ -11,12 +11,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
 
 return {
   {
-    "echasnovski/mini.move",
-    version = "*",
-    config = function() require("mini.move").setup() end,
-    event = "VeryLazy",
-  },
-  {
     "mg979/vim-visual-multi",
     event = "User AstroFile",
   },
@@ -37,6 +31,12 @@ return {
         },
       },
     },
+  },
+  {
+    "folke/trouble.nvim",
+    cmd = {"Trouble", "TroubleToggle"},
+    lazy = true,
+    config = true,
   },
   -- {
   --   "filipdutescu/renamer.nvim",
@@ -63,16 +63,10 @@ return {
   --     handler = nil,
   --   }
   -- },
-  {
-    "folke/trouble.nvim",
-    cmd = {"Trouble", "TroubleToggle"},
-    lazy = true,
-    config = true,
-  },
-  {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    lazy = true,
-    config = true,
-  }
+  -- {
+  --   "simrat39/symbols-outline.nvim",
+  --   cmd = "SymbolsOutline",
+  --   lazy = true,
+  --   config = true,
+  -- }
 }
