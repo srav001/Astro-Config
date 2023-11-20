@@ -39,40 +39,40 @@ return {
     },
   },
   {
-    "filipdutescu/renamer.nvim",
-    branch = "master",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    lazy = true,
-    opts = {
-      title = 'Rename',
-      padding = {
-        top = 0,
-        left = 0,
-        bottom = 0,
-        right = 0,
-      },
-      min_width = 15,
-      max_width = 45,
-      border = true,
-      border_chars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
-      show_refs = true,
-      with_qf_list = true,
-      with_popup = true,
-      handler = nil,
-    }
-  },
-  {
     "folke/trouble.nvim",
     cmd = {"Trouble", "TroubleToggle"},
     lazy = true,
     config = true,
   },
-  {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    lazy = true,
-    config = true,
-  }
+  -- {
+  --   "filipdutescu/renamer.nvim",
+  --   branch = "master",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  --   lazy = true,
+  --   opts = {
+  --     title = 'Rename',
+  --     padding = {
+  --       top = 0,
+  --       left = 0,
+  --       bottom = 0,
+  --       right = 0,
+  --     },
+  --     min_width = 15,
+  --     max_width = 45,
+  --     border = true,
+  --     border_chars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+  --     show_refs = true,
+  --     with_qf_list = true,
+  --     with_popup = true,
+  --     handler = nil,
+  --   }
+  -- },
+  -- {
+  --   "simrat39/symbols-outline.nvim",
+  --   cmd = "SymbolsOutline",
+  --   lazy = true,
+  --   config = true,
+  -- }
 }
