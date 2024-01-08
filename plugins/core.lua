@@ -25,7 +25,7 @@ return {
           rosewater = "#5b8fde",
           flamingo = "#fcb1b1",
           pink = "#f5bde6",
-          mauve = "#cfa9fc",
+          mauve = "#caa2fc",
           red = "#ed8796",
           maroon = "#ee99a0",
           peach = "#faa575",
@@ -36,20 +36,27 @@ return {
           sapphire = "#7dc4e4",
           blue = "#80caff",
           lavender = "#ff8787",
+
           text = "#dbe3ff",
+
           subtext0 = "#615d69",
+
           overlay0 = "#504d57",
-          surface0 = "#1a191c",
+
+          surface0 = "#272629",
+          surface1 = "#433f4d",
+
+          -- subtext1 = "#bac2de",
+          -- overlay2 = "#9399b2",
+          -- overlay1 = "#7f849c",
+          -- surface2 = "#c7d7fc",
+
           base = "#1a191c",
           mantle = "#1e2030",
           crust = "#181926",
         },
       },
       integrations = {
-        telescope = {
-          enabled = true,
-          style = "nvchad",
-        },
         dropbar = {
           enabled = true,
           color_mode = true,
