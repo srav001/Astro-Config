@@ -46,11 +46,6 @@ return {
           surface0 = "#272629",
           surface1 = "#433f4d",
 
-          -- subtext1 = "#bac2de",
-          -- overlay2 = "#9399b2",
-          -- overlay1 = "#7f849c",
-          -- surface2 = "#c7d7fc",
-
           base = "#1a191c",
           mantle = "#1e2030",
           crust = "#181926",
