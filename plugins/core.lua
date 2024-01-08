@@ -21,7 +21,7 @@ return {
       term_colors = true,
       transparent_background = false,
       color_overrides = {
-        mocha = {
+        all = {
           rosewater = "#f4dbd6",
           flamingo = "#f0c6c6",
           pink = "#f5bde6",

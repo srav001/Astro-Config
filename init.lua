@@ -17,7 +17,7 @@ return {
     },
   },
 
-  colorscheme = "catppuccin-mocha",
+  colorscheme = "catppuccin",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
