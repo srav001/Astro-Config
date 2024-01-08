@@ -9,6 +9,7 @@ return {
       "markdown",
       "javascript",
       "typescript",
+      "tsx",
       "vue",
       -- "astro",
       -- "svelte",
