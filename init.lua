@@ -98,7 +98,7 @@ return {
       --   return opts
       -- end,
       volar = function(opts)
-        opts.filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
+        opts.filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json", "svelte" }
         opts.settings = {
           typescript = {
             inlayHints = {
