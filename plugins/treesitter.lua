@@ -5,7 +5,7 @@ return {
      opts.ensure_installed = {
       "lua",
       "html",
-      "scss",
+      "css",
       "markdown",
       "javascript",
       "typescript",
