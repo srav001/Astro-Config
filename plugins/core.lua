@@ -1,19 +1,4 @@
 return {
-  -- customize alpha options
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
-      }
-      return opts
-    end,
-  },
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -46,8 +31,8 @@ return {
           surface0 = "#272629",
           surface1 = "#433f4d",
 
-          base = "#1a191c",
-          mantle = "#1e2030",
+          base = "#121212",
+          mantle = "#1a1b1c",
           crust = "#181926",
         },
       },
