@@ -39,11 +39,11 @@ return {
           overlay0 = "#504d57",
 
           surface0 = "#272629",
-          surface1 = "#433f4d",
+          surface1 = "#242424",
 
           base = "#121212",
           mantle = "#1a1b1c",
-          crust = "#181926",
+          crust = "#1e2021",
         },
       },
       integrations = {
