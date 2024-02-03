@@ -98,6 +98,7 @@ return {
       --   return opts
       -- end,
       volar = function(opts)
+        opts.capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
         opts.filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json", "svelte" }
         opts.settings = {
           typescript = {
