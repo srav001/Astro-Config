@@ -49,27 +49,28 @@ return {
       -- end
     },
     config = {
-      svelte = function(opts)
-        opts.settings = {
-          svelte = {
-            plugin = {
-              -- html = {
-              --   completions = {
-              --     enabled = true,
-              --     emmet = true,
-              --   },
-              -- },
-              svelte = {
-                compilerWarnings = {
-                  ["missing-declaration"] = "ignore",
-                },
-              },
-            },
-          },
-        }
-        return opts
-      end,
+      -- svelte = function(opts)
+      --   opts.settings = {
+      --     svelte = {
+      --       plugin = {
+      --         -- html = {
+      --         --   completions = {
+      --         --     enabled = true,
+      --         --     emmet = true,
+      --         --   },
+      --         -- },
+      --         svelte = {
+      --           compilerWarnings = {
+      --             ["missing-declaration"] = "ignore",
+      --           },
+      --         },
+      --       },
+      --     },
+      --   }
+      --   return opts
+      -- end,
       tsserver = function(opts)
+        opts.capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
         opts.settings = {
           typescript = {
             inlayHints = {
