@@ -72,6 +72,9 @@ return {
       tsserver = function(opts)
         opts.capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
         opts.settings = {
+          completions = {
+            completeFunctionCalls = true,
+          },
           typescript = {
             inlayHints = {
               includeInlayParameterNameHints = "all",
@@ -82,6 +85,9 @@ return {
               includeInlayPropertyDeclarationTypeHints = true,
               includeInlayFunctionLikeReturnTypeHints = true,
               includeInlayEnumMemberValueHints = true,
+            },
+            updateImportsOnFileMove = {
+              enabled = "always",
             },
           },
           javascript = {
