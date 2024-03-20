@@ -59,6 +59,10 @@ return {
     },
 
     ["<leader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", desc = "Find in current buffer" },
+
+    ["<leader>r"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
+    ["r"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
+    ["R"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
   },
 
   i = {
